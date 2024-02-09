@@ -1,4 +1,4 @@
-# TravelPlaner
+# TravelHelper
 
 ## Description
 
