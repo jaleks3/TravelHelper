@@ -31,7 +31,7 @@ public class Service {
     }
 
     public String getWeather(String city) throws Exception {
-        String weatherApiKey = "5efd8a6a73bfe2466e143d90fe263ce1";
+        String weatherApiKey = "YOUR_API_KEY";
         String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+','+countries.get(country).getDisplayCountry()+"&appid=" + weatherApiKey +"&units=metric";
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
         con.setRequestMethod("GET");
