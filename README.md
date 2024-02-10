@@ -13,7 +13,7 @@ CountryInfoApp is a Java application developed to provide detailed information a
 
 ## Getting Started
 
-To run the CountryInfoApp project, follow these steps:
+To run the TravelHelper project, follow these steps:
 
 1. Ensure you have Java Development Kit (JDK) installed on your machine.
 2. Clone or download this repository to your local machine.
