@@ -12,9 +12,9 @@ The project consists of the following components:
 - Controller.java: Manages the application's logic, including fetching weather data, currency exchange rates, and loading Wikipedia articles based on user input.
 ### Service
 - APIs
--- ExchangeRateAPI.java: Handles interactions with an external API to fetch currency exchange rates.
--- NbpAPI.java: Interfaces with an external API to retrieve National Bank of Poland (NBP) exchange rates.
--- OpenWeatherAPI.java: Manages interactions with the OpenWeatherMap API to fetch weather data.
+  - ExchangeRateAPI.java: Handles interactions with an external API to fetch currency exchange rates.
+  - NbpAPI.java: Interfaces with an external API to retrieve National Bank of Poland (NBP) exchange rates.
+  - OpenWeatherAPI.java: Manages interactions with the OpenWeatherMap API to fetch weather data.
 - Service.java: Implements the main business logic of the application, coordinating interactions with the external APIs.
 ### View
 - TravelHelper.java: Provides the user interface for the application, allowing users to input a country, city, and currency code. It displays weather information, currency exchange rates, and loads Wikipedia articles based on user input.
