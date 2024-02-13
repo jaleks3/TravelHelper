@@ -1,5 +1,5 @@
 # Description
-TravwelHelper is a Java Swing-based desktop application designed to provide users with weather information, currency exchange rates, and quick access to Wikipedia articles based on user input. The application utilizes various APIs to fetch weather data, currency exchange rates, and dynamically load Wikipedia articles.
+TravelHelper is a Java Swing-based desktop application designed to provide users with weather information, currency exchange rates, and quick access to Wikipedia articles based on user input. The application utilizes various APIs to fetch weather data, currency exchange rates, and dynamically load Wikipedia articles.
 
 ## Project Structure
 The project consists of the following components:
@@ -17,7 +17,7 @@ The project consists of the following components:
 -- OpenWeatherAPI.java: Manages interactions with the OpenWeatherMap API to fetch weather data.
 - Service.java: Implements the main business logic of the application, coordinating interactions with the external APIs.
 ### View
-- SimpleSwingBrowser.java: Provides the user interface for the application, allowing users to input a country, city, and currency code. It displays weather information, currency exchange rates, and loads Wikipedia articles based on user input.
+- TravelHelper.java: Provides the user interface for the application, allowing users to input a country, city, and currency code. It displays weather information, currency exchange rates, and loads Wikipedia articles based on user input.
 ### Main
 - Main.java: Entry point of the application. Initializes the service layer and the view components and connects them through the controller.
 ## Features
@@ -27,7 +27,7 @@ The project consists of the following components:
 - Dynamically loads Wikipedia articles for quick reference.
 
 ## Getting Started
-To run the SimpleSwingBrowser application, follow these steps:
+To run the TravelHelper application, follow these steps:
 
 - Ensure you have Java Development Kit (JDK) installed on your system.
 - Clone or download the project repository to your local machine.
