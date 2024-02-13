@@ -32,7 +32,7 @@ To run the TravelHelper application, follow these steps:
 - Ensure you have Java Development Kit (JDK) installed on your system.
 - Clone or download the project repository to your local machine.
 - Open the project in your preferred Java development environment (e.g., IntelliJ IDEA, Eclipse).
-- Replace "YOUR_API_KEY" in the OpenWeatherAPI and ExchangeRateAPI constructors with your actual API keys obtained from OpenWeatherMap and the currency exchange rate provider.
+- Replace "YOUR_API_KEY" in the OpenWeatherAPI and ExchangeRateAPI constructors with your actual API keys obtained from [Exchange Rates](https://exchangeratesapi.io/) and [Open Weather](https://openweathermap.org/api).
 - Build the project to compile the source code.
 - Run the Main.java file to start the application.
 - Enter the desired country, city, and currency code in the provided fields.
