@@ -5,18 +5,19 @@ import zad1.Service.Service;
 
 public class OpenWeatherAPI {
 
-    private Service service;
-    private String apiKey;
-    private String countryCode;
+    private final Service service;
+    private final String apiKey;
+
     public OpenWeatherAPI(Service service, String apiKey) {
         this.service = service;
         this.apiKey = apiKey;
     }
 
     public String getWeather(String city) throws Exception {
-        this.countryCode = service.getCountries().get(service.getCountry()).getDisplayCountry();
+        String countryCode = service.getCountries().get(service.getCountry()).getDisplayCountry();
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+','+countryCode+"&appid=" + apiKey +"&units=metric";
-        return Fetcher.getString(url).toString();
+        String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+','+ countryCode +"&appid=" + apiKey +"&units=metric";
+
+        return Fetcher.get(url).toString();
     }
 }

@@ -13,12 +13,12 @@ public class Controller {
     public Controller(Service service, SimpleSwingBrowser simpleSwingBrowser) {
         SwingUtilities.invokeLater(() -> simpleSwingBrowser.setVisible(true));
         NbpAPI nbpAPI = new NbpAPI(service);
-        OpenWeatherAPI openWeatherAPI = new OpenWeatherAPI(service,"5efd8a6a73bfe2466e143d90fe263ce1");
-        ExchangeRateAPI exchangeRateAPI = new ExchangeRateAPI(service);
+        OpenWeatherAPI openWeatherAPI = new OpenWeatherAPI(service,"YOUR_API_KEY");
+        ExchangeRateAPI exchangeRateAPI = new ExchangeRateAPI(service,"YOUR_API_KEY");
 
         simpleSwingBrowser.getButton().addActionListener(e -> {
             try {
-                simpleSwingBrowser.loadURL("http://en.wikipedia.org/wiki/"+simpleSwingBrowser.getCityField().getText());
+                simpleSwingBrowser.loadURL("https://en.wikipedia.org/wiki/" +simpleSwingBrowser.getCityField().getText());
                 service.setCountry(simpleSwingBrowser.getCountryField().getText());
                 simpleSwingBrowser.getGetWeather().setText(
                         openWeatherAPI.getWeather(simpleSwingBrowser.getCityField().getText())

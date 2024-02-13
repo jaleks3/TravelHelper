@@ -7,18 +7,20 @@ import java.util.Currency;
 import java.util.Locale;
 
 public class ExchangeRateAPI {
-    private Locale country;
-    private Currency baseCurrency;
-    public ExchangeRateAPI(Service service) {
-        this.country = service.getCountries().get(service.getCountry());
-
+    private final Service service;
+    private final String apiKey;
+    public ExchangeRateAPI(Service service,String apiKey) {
+        this.service = service;
+        this.apiKey = apiKey;
     }
     public Double getRateFor(String currency) throws Exception {
-        this.baseCurrency = Currency.getInstance(country);
+        Locale country = service.getCountries().get(service.getCountry());
+        Currency baseCurrency = Currency.getInstance(country);
 
-        String url = "https://api.exchangerate.host/latest?base="+ baseCurrency + "&symbols=" + currency;
-        Fetcher.getString(url);
+        String url = "https://api.exchangerate.host/latest?=" + apiKey + "&base=" + baseCurrency + "&symbols=" + currency;
 
-        return Fetcher.getString(url).getJSONObject("rates").getDouble(currency);
+        System.out.println(Fetcher.get(url));
+
+        return Fetcher.get(url).getJSONObject("rates").getDouble(currency);
     }
 }

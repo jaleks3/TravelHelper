@@ -10,27 +10,27 @@ import java.util.Currency;
 import java.util.Locale;
 
 public class NbpAPI {
-    private Locale country;
-    private Currency baseCurrency;
+    private final Service service;
     public NbpAPI(Service service) {
-        this.country = service.getCountries().get(service.getCountry());
+        this.service = service;
     }
 
     public double getNBPRate() throws IOException {
-        this.baseCurrency = Currency.getInstance(country);
+        Locale country = service.getCountries().get(service.getCountry());
+        Currency baseCurrency = Currency.getInstance(country);
 
-        if (country.toString().equals("Poland"))
+        if (baseCurrency.toString().equals("PLN"))
             return 1;
 
         String[] abc = {"a","b"};
-        StringBuilder content = new StringBuilder();
+        JSONObject obj = null;
 
         for(String s : abc) {
-            String url = "http://api.nbp.pl/api/exchangerates/rates/"+ s + "/"+ baseCurrency +"/?format=json";
-
-            content.append(Fetcher.getString(url));
+            String url = "https://api.nbp.pl/api/exchangerates/rates/" + s + "/"+ baseCurrency +"/?format=json";
+            obj = Fetcher.get(url);
+            if(!obj.isEmpty())
+                break;
         }
-        JSONObject obj = new JSONObject(content.toString());
         JSONArray arr = obj.getJSONArray("rates");
 
         return arr.getJSONObject(0).getDouble("mid");
